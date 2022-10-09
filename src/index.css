@@ -1329,6 +1329,77 @@ footer .legals .disclaimer {
     box-shadow: 0 1em 2em -0.5em rgb(0 0 0 / 35%);
 }
 
+.thumb {
+    width: 198.5px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1em 0.5em -0.5em rgb(0 0 0 / 20%);
+}
+
+.thumb img {
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.thumb .name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #212121;
+    text-decoration: none;
+    margin-top: 8px;
+    width: 100%;
+    height: 16%;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thumb .price {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #212121;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 10em;
+    margin-top: 25px;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 @media only screen and (max-width: 425px) {
     .a-side-hided-content {
         display: none !important;
@@ -1355,7 +1426,7 @@ footer .legals .disclaimer {
         display: none;
     }
 
-    header .header-mid-container .standwich {
+    header .header-mid-container .barButton {
         display: flex;
         flex-direction: column;
         justify-self: center;
@@ -1368,7 +1439,7 @@ footer .legals .disclaimer {
         margin-left: -2px;
     }
 
-    header .header-mid-container .standwich .standwich-line {
+    header .header-mid-container .barButton .barButton-line {
         display: block;
         width: 45%;
         height: 2px;
@@ -1390,7 +1461,7 @@ footer .legals .disclaimer {
         height: 32px;
     }
 
-    header .header-mid-container .standwich:hover~.header-mid {
+    header .header-mid-container .barButton:hover~.header-mid {
         display: block;
         position: absolute;
         color: black;
@@ -1400,8 +1471,8 @@ footer .legals .disclaimer {
         height: 100%;
     }
 
-    header .standwich:focus~.side-menu,
-    header .standwich:focus~.side-menu * {
+    header .barButton:focus~.side-menu,
+    header .barButton:focus~.side-menu * {
         display: block;
         z-index: 5;
     }
