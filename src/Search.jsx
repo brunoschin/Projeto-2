@@ -7,7 +7,7 @@ export default function Search() {
     return (<div>
         <input type="text" value={search} onChange={e => setSearch(e.target.value)} />
         <button type="button" onClick={async () => {
-            const response = await fetch('http://store.steampowered.com/api/storesearch/?term=god%20of%20war&cc=BR', {
+            const response = await fetch('https://store.steampowered.com/api/storesearch/?term=god%20of%20war&cc=BR', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
