@@ -46,12 +46,14 @@ export default function Modal(props) {
                     if (e.target.value.length < 3) {
                         setEmailError(true)
                         setEmailErrorMessage('O email deve ter ao menos 3 caracteres')
+                        return
                     } else {
                         setEmailError(false)
                     }
                     if (!e.target.value.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/g)) {
                         setEmailError(true)
                         setEmailErrorMessage('O email deve ser válido')
+                        return
                     } else {
                         setEmailError(false)
                     }
