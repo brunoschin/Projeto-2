@@ -3,11 +3,15 @@ import Thumb from "./Thumb";
 
 const cheapSharkAPI = "https://www.cheapshark.com/api/1.0/";
 
-export default function Search(props) {
+export default function Search() {
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
-
+    const [errorInput, setErrorInput] = useState(false);
     const searchHandler = async () => {
+        if (search.length < 3) {
+            setErrorInput(true);
+            return;
+        }
         const response = await fetch(`${cheapSharkAPI}games?title=${search}`, {
             method: 'GET',
             headers: {
@@ -20,7 +24,13 @@ export default function Search(props) {
 
     return <>
         <div className="searchContainer">
-            <input type="text" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={() => {
+            {errorInput && <p className="error">Digite pelo menos 3 caracteres*</p>}
+            <input type="text" value={search} onChange={e => {
+                setSearch(e.target.value)
+                if (e.target.value.length >= 3) {
+                    setErrorInput(false)
+                }
+            }} onKeyDown={() => {
                 if (window.event.keyCode === 13) {
                     searchHandler();
                 }

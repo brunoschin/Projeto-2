@@ -32,10 +32,12 @@ input {
     letter-spacing: 1px;
     padding: 0 8px;
 }
-.modal input{
+
+.modal input {
     width: 80%;
 }
-.modal{
+
+.modal {
     position: fixed;
     top: 15%;
     left: calc(50% - 250px);
@@ -47,22 +49,25 @@ input {
     border-radius: 20px;
     z-index: 90;
 }
-.modal .modal-content-header{
+
+.modal .modal-content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 10%;
-    padding:20px;
+    padding: 20px;
     position: relative;
 }
-.modal .modal-content-header h2{
+
+.modal .modal-content-header h2 {
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
     width: 100%;
     text-align: center;
 }
-.modal .modal-content-header button{
+
+.modal .modal-content-header button {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -79,10 +84,12 @@ input {
     color: #FFFFFF;
     z-index: 99;
 }
-.modal .modal-content-header button:hover{
+
+.modal .modal-content-header button:hover {
     background-color: #FF0000;
 }
-.modal .modal-logo{
+
+.modal .modal-logo {
     width: 100%;
     height: 20%;
     display: flex;
@@ -90,16 +97,43 @@ input {
     align-items: center;
     transform: scale(2);
 }
-.modal .modal-content-body{
+
+.modal .modal-content-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    margin-top: 60px;
-    gap: 25px;
+    position: relative;
 }
-.modal .modal-content-body button{
+
+.geralError {
+    position: absolute;
+    top: 190px;
+    color: red;
+}
+
+.modal .modal-content-body input {
+    margin-top: 35px;
+}
+
+.modalInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.modalInput div {
+    position: absolute;
+    top: 75px;
+    color: red;
+}
+
+.modal .modal-content-body .modal-buttons button {
+    margin-top: 20px;
     width: 80%;
     height: 30px;
     border: none;
@@ -112,7 +146,62 @@ input {
     outline: none;
     color: #FFFFFF;
 }
-.modal .modal-content-body button:hover{
+
+.accountContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    gap: 15px;
+    height: 100%;
+    position: relative;
+}
+
+.accountContainer span {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    width: 100px;
+}
+
+.accountContainer button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 6px;
+    letter-spacing: 1px;
+    outline: none;
+    color: #222;
+    z-index: 99;
+}
+
+.accountContainer button:hover {
+    color: red;
+}
+
+.accountContainer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.modal .modal-content-body .modal-buttons {
+    margin-top: 60px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal .modal-content-body .modal-buttons button {
+    margin-top: 20px;
+}
+
+.modal .modal-content-body button:hover {
     background-color: #FF0000;
 }
 
@@ -161,6 +250,7 @@ input {
     height: 100%;
 }
 
+#more,
 .header-mid .a-container {
     display: flex;
     align-items: center;
@@ -168,6 +258,7 @@ input {
     cursor: pointer;
 }
 
+#more,
 .header-mid .a-container a {
     color: #212121;
     text-decoration: none;
@@ -220,6 +311,7 @@ input {
     background-color: transparent;
 }
 
+#more,
 .hided-content-more .content li a {
     font-weight: 400;
     line-height: 24px;
@@ -237,6 +329,7 @@ input {
     justify-content: flex-start;
 }
 
+#more:focus,
 .hided-content-more .content li a:focus {
     border: 1px solid rgba(0, 0, 0, 0);
 }
@@ -251,12 +344,12 @@ input {
     }
 }
 
-.hided-content-more .content li a:focus svg {
+.hided-content-more .content li #more:focus svg {
     animation: rotate-in-time 0.1s linear;
     transform: rotate(180deg);
 }
 
-.hided-content-more .content li a:focus~.more-content {
+.hided-content-more .content li #more:focus~.more-content {
     display: block;
 }
 
@@ -1473,6 +1566,34 @@ footer .legals .disclaimer {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    gap: 15px;
+    position: relative;
+}
+
+.searchContainer p {
+    position: absolute;
+    top: 40px;
+    left: 40%;
+    color: red;
+}
+
+.searchContainer button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchContainer button:hover {
+    background-color: #999;
+    color: #fff;
 }
 
 .resultsContainer {

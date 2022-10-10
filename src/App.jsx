@@ -5,7 +5,8 @@ import { useState } from 'react';
 import Modal from './Modal';
 
 export default function App() {
-	const [logged, setLogged] = useState(false);
+	const token = localStorage.getItem('token')
+	const [logged, setLogged] = useState(token ? true : false);
 	const [modal, setModal] = useState(false);
 	return (
 		<div className="App">

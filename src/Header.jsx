@@ -521,13 +521,13 @@ export default function Header(props) {
 							<div className="hided-content-more">
 								<div className="content">
 									<li>
-										<a href="/" tabIndex={1} id="more">
+										<div tabIndex={1} id="more">
 											Ferramentas de desenvolvedor
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 												<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="currentColor"></path>
 												<path fill="none" d="M0 0h24v24H0V0z"></path>
 											</svg>
-										</a>
+										</div>
 										<div className="more-content">
 											<a href="/">Baixe o Unity</a>
 											<a href="/">Asset Store</a>

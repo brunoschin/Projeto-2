@@ -1,11 +1,30 @@
-export default function Account(props) {
-    return props.logged ?
-        <>
+import { useEffect, useState } from "react";
 
+export default function Account(props) {
+    const id = localStorage.getItem('token')?.replace('QpwL5tke4Pnpja7X', '');
+    const [user, setUser] = useState({});
+    useEffect(() => {
+        fetch(`https://reqres.in/api/users/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                setUser(data.data)
+            })
+    }, [id])
+    if (props.logged && user) {
+        return <>
+            <div className="accountContainer">
+                <span>{user.first_name} {user.last_name}</span>
+                <img src={user.avatar} alt="avatar" />
+                <button type="button" onClick={() => {
+                    localStorage.removeItem('token');
+                    props.setLogged(false);
+                }}>Sair</button>
+            </div>
         </>
-        : <>
+    } else {
+        return <>
             <button className="header-mid-container-button"
-                onClick={() => props.setModal(!props.modal)}>Comece</button>
+                onClick={() => props.setModal(!props.modal)}>Entrar</button>
             <div className="header-grey-buttons">
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -33,4 +52,5 @@ export default function Account(props) {
                 </button>
             </div>
         </>
+    }
 }
