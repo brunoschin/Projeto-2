@@ -6,10 +6,10 @@ const cheapSharkAPI = "https://www.cheapshark.com/api/1.0/";
 export default function Search() {
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
-    const [errorInput, setErrorInput] = useState(false);
+    const [errorInput, setErrorInput] = useState("");
     const searchHandler = async () => {
         if (search.length < 3) {
-            setErrorInput(true);
+            setErrorInput("Digite pelo menos 3 caracteres*");
             return;
         }
         const response = await fetch(`${cheapSharkAPI}games?title=${search}`, {
@@ -19,16 +19,20 @@ export default function Search() {
             }
         })
         const data = await response.json();
+        if (data.length === 0) {
+            setErrorInput("Nenhum resultado encontrado*");
+            return;
+        }
         setResults(data);
     }
 
     return <>
         <div className="searchContainer">
-            {errorInput && <p className="error">Digite pelo menos 3 caracteres*</p>}
+            {errorInput !== "" && <p className="error">{errorInput}</p>}
             <input type="text" value={search} onChange={e => {
                 setSearch(e.target.value)
                 if (e.target.value.length >= 3) {
-                    setErrorInput(false)
+                    setErrorInput("")
                 }
             }} onKeyDown={() => {
                 if (window.event.keyCode === 13) {
